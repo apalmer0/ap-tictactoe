@@ -52,6 +52,17 @@ Developers should run these often!
     win the game.
 -   The losing player, when a winning move is made, will play first in the next
     game
+    winning situations
+      0,0; 0,1; 0,2 top row
+      1,0; 1,1; 1,2 middle row
+      2,0; 2,1, 2,2 bottom row
+
+      0,0; 1,0; 2,0 left column
+      0,1; 1,1; 2,1 middle column
+      0,2; 1,2; 2,2 right column
+
+      0,0; 1,1; 2,2 topleft-bottomright
+      0,2; 1,1; 2,0 topright-bottomleft
 
 ## [License](LICENSE)
 
