@@ -1,7 +1,52 @@
-$background-color: #4e4e4e;
-$font-color: #dfdfdf;
+$background-color: #000;
+$font-color: #458b00;
+$white: #fff;
+$black: #000;
+$blue: #0198e1;
 
 body {
   background-color: $background-color;
   color: $font-color;
+  font-family: 'Podkova', serif;
+  text-align: center;
+}
+
+div {
+  color: $black;
+  height: 30%;
+  width: 30%;
+}
+
+.board {
+  height: 500px;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.square {
+  color: $white;
+  float: left;
+  font-size: 600%;
+}
+
+.center {
+  border-left: 2px solid $white;
+  border-right: 2px solid $white;
+}
+
+.mid {
+  border-bottom: 2px solid $white;
+  border-top: 2px solid $white;
+}
+
+.left {
+  clear: left;
+}
+
+.white {
+  background-color: $white;
+}
+
+.blue {
+  background-color: $blue;
 }

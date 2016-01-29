@@ -40,6 +40,19 @@ Developers should run these often!
 -   `grunt build`: place bundled styles and scripts where `index.html` can find
     them
 
+## User stories
+
+-   A <role>, when <condition>, can <action>, which will <effect>
+-   A user, when visiting the page, can log in, which will render the game board
+-   A user, when signing up, can provide a username and password, which will
+    save the user
+-   A user, when looking at the gameboard, can click a square, which will mark
+    the square and save the move.
+-   A user, when linking three squares with the user's designated shape, will
+    win the game.
+-   The losing player, when a winning move is made, will play first in the next
+    game
+
 ## [License](LICENSE)
 
 Source code distributed under the MIT license. Text and other assets copyright

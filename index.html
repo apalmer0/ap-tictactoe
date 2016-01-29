@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
+      <link rel='shortcut icon' href='assets/images/favicon.ico' type='image/x-icon'/ >
+      <link href='https://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
     </head>
     <body>
+      <h1>tic tac toe</h1>
+      <div class='board'>
+        <div class='square top left'></div>
+        <div class='square top center'></div>
+        <div class='square top right'></div>
+        <div class='square mid left'></div>
+        <div class='square mid center'></div>
+        <div class='square mid right'></div>
+        <div class='square bot left'></div>
+        <div class='square bot center'></div>
+        <div class='square bot right'></div>
+      </div>
+
       <script src="http://localhost:8080/webpack-dev-server.js"></script>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8"></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8"></script>
