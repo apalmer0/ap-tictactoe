@@ -62,9 +62,9 @@ $(document).ready(() => {
       $(board[i]).text('');
       $(board[i]).removeClass('blue');
       $(board[i]).removeClass('gray');
-      count = 0;
-      $('.newgame').hide();
     }
+    count = 0;
+    $('.newgame').hide();
   };
 
   $('.newgame').on('click', function() {
