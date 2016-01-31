@@ -3,7 +3,7 @@
     <head>
       <title>Tic Tac Toe</title>
       <link rel='shortcut icon' href='assets/images/favicon.ico' type='image/x-icon'/ >
-      <link href='https://fonts.googleapis.com/css?family=Syncopate:700' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
     </head>
     <body>
       <h1>tic tac toe</h1>
@@ -21,9 +21,19 @@
         </div>
         <div class='newgame'></div>
       </div>
-      <p>
-        X wins: <span id='xWins'>0</span>, O wins: <span id='oWins'>0</span>
-      </p>
+      <table>
+        <tr>
+          <td> X </td>
+          <td>Ties</td>
+          <td> O </td>
+        </tr>
+        <tr>
+          <td id='xWins'>0</td>
+          <td id='ties'>0</td>
+          <td id='oWins'>0</td>
+        </tr>
+      </table>
+
 
       <script src="http://localhost:8080/webpack-dev-server.js"></script>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8"></script>

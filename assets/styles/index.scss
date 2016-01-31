@@ -3,11 +3,12 @@ $font-color: #458b00;
 $white: #fff;
 $black: #000;
 $blue: #0198e1;
+$gray: #282828;
 
 body {
   background-color: $background-color;
   color: $font-color;
-  font-family: 'Syncopate', sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
 }
 
@@ -15,6 +16,11 @@ div {
   color: $white;
   height: 30%;
   width: 30%;
+}
+
+table {
+  color: $white;
+  margin: 0 auto;
 }
 
 .game {
@@ -67,4 +73,8 @@ div {
 
 .blue {
   color: $blue;
+}
+
+.gray {
+  color: $gray;
 }
