@@ -3,21 +3,27 @@
     <head>
       <title>Tic Tac Toe</title>
       <link rel='shortcut icon' href='assets/images/favicon.ico' type='image/x-icon'/ >
-      <link href='https://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Syncopate:700' rel='stylesheet' type='text/css'>
     </head>
     <body>
       <h1>tic tac toe</h1>
-      <div class='board' id='toggleTrue'>
-        <div class='square top left crossDown'></div>
-        <div class='square top center'></div>
-        <div class='square top right'></div>
-        <div class='square mid left crossUp'></div>
-        <div class='square mid center crossDown crossUp'></div>
-        <div class='square mid right'></div>
-        <div class='square bot left crossUp'></div>
-        <div class='square bot center'></div>
-        <div class='square bot right crossDown'></div>
+      <div class='game'>
+        <div class='board'>
+          <div class='square top left'></div>
+          <div class='square top center'></div>
+          <div class='square top right'></div>
+          <div class='square mid left'></div>
+          <div class='square mid center'></div>
+          <div class='square mid right'></div>
+          <div class='square bot left'></div>
+          <div class='square bot center'></div>
+          <div class='square bot right'></div>
+        </div>
+        <div class='newgame'></div>
       </div>
+      <p>
+        X wins: <span id='xWins'>0</span>, O wins: <span id='oWins'>0</span>
+      </p>
 
       <script src="http://localhost:8080/webpack-dev-server.js"></script>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8"></script>

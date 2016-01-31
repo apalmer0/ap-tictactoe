@@ -10,62 +10,65 @@ require('./example');
 require('../styles/index.scss');
 
 $(document).ready(() => {
+  $('.newgame').hide();
   var count = 0;
+  var xWinCount = $('#xWins').val() || 0;
+  var oWinCount = $('#oWins').val() || 0;
+  var winner = '';
   var board = $('.board').children();
-  var top = $('.board').find('.top');
-  var mid = $('.board').find('.mid');
-  var bot = $('.board').find('.bot');
-  var left = $('.board').find('.left');
-  var center = $('.board').find('.center');
-  var right = $('.board').find('.right');
-  var crossDown = $('.board').find('.crossDown');
-  var crossUp = $('.board').find('.crossUp');
+  var winningCombos = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
   var findWinner = function findWinner(){
-    if($(top[0]).text() === 'X' && $(top[1]).text() === 'X' && $(top[2]).text() === 'X' ||
-        $(mid[0]).text() === 'X' && $(mid[1]).text() === 'X' && $(mid[2]).text() === 'X' ||
-        $(bot[0]).text() === 'X' && $(bot[1]).text() === 'X' && $(bot[2]).text() === 'X' ||
-        $(left[0]).text() === 'X' && $(left[1]).text() === 'X' && $(left[2]).text() === 'X' ||
-        $(center[0]).text() === 'X' && $(center[1]).text() === 'X' && $(center[2]).text() === 'X' ||
-        $(right[0]).text() === 'X' && $(right[1]).text() === 'X' && $(right[2]).text() === 'X' ||
-        $(crossDown[0]).text() === 'X' && $(crossDown[1]).text() === 'X' && $(crossDown[2]).text() === 'X' ||
-        $(crossUp[0]).text() === 'X' && $(crossUp[1]).text() === 'X' && $(crossUp[2]).text() === 'X' ||
-        $(top[0]).text() === 'X' && $(top[1]).text() === 'X' && $(top[2]).text() === 'X' ||
-        $(mid[0]).text() === 'O' && $(mid[1]).text() === 'O' && $(mid[2]).text() === 'O' ||
-        $(bot[0]).text() === 'O' && $(bot[1]).text() === 'O' && $(bot[2]).text() === 'O' ||
-        $(left[0]).text() === 'O' && $(left[1]).text() === 'O' && $(left[2]).text() === 'O' ||
-        $(center[0]).text() === 'O' && $(center[1]).text() === 'O' && $(center[2]).text() === 'O' ||
-        $(right[0]).text() === 'O' && $(right[1]).text() === 'O' && $(right[2]).text() === 'O' ||
-        $(crossDown[0]).text() === 'O' && $(crossDown[1]).text() === 'O' && $(crossDown[2]).text() === 'O' ||
-        $(crossUp[0]).text() === 'O' && $(crossUp[1]).text() === 'O' && $(crossUp[2]).text() === 'O'){
-      return true;
-    } else {
-      return false;
-    }
-  };
-  var currentState = [];
-  var updateBoard = function updateBoard(){
-    for ( let i = 0; i < board.length; i++){
-      currentState[i] = $(board[i]).text();
+    for (let i = 0; i < winningCombos.length; i++){
+      var a, b, c;
+
+      a = board[winningCombos[i][0]];
+      b = board[winningCombos[i][1]];
+      c = board[winningCombos[i][2]];
+
+      if ( $(a).text() === $(b).text() && $(a).text() === $(c).text() && $(a).text() !== ''){
+        $(a).addClass('blue');
+        $(b).addClass('blue');
+        $(c).addClass('blue');
+        winner = $(a).text();
+        if ( winner === 'X'){
+          xWinCount++;
+        } else if ( winner === 'O'){
+          oWinCount++;
+        }
+        return true;
+      }
     }
   };
 
+  var clearBoard = function clearBoard(){
+    for ( let i = 0; i < board.length; i++){
+      $(board[i]).text('');
+      $(board[i]).removeClass('blue');
+      $('.newgame').hide();
+    }
+  };
+
+  $('.newgame').on('click', function(){
+    clearBoard();
+  });
   $('.square').on('click', function(){
     if (count % 2 === 0){
       if( $(this).text()!=='O'){
         $(this).text('X');
         count++;
-        updateBoard();
       }
     } else {
       if( $(this).text()!=='X'){
         $(this).text('O');
         count++;
-        updateBoard();
       }
     }
+
     if(findWinner()){
-      console.log('Game over');
+      $('#xWins').text(xWinCount);
+      $('#oWins').text(oWinCount);
+      $('.newgame').show();
     }
   });
 });

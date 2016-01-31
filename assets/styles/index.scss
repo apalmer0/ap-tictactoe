@@ -7,26 +7,44 @@ $blue: #0198e1;
 body {
   background-color: $background-color;
   color: $font-color;
-  font-family: 'Podkova', serif;
+  font-family: 'Syncopate', sans-serif;
   text-align: center;
 }
 
 div {
-  color: $black;
+  color: $white;
   height: 30%;
   width: 30%;
 }
 
-.board {
-  height: 500px;
+.game {
+  height: 450px;
   margin: 0 auto;
-  width: 500px;
+  width: 450px;
 }
+
+.board {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.newgame {
+  cursor: pointer;
+  height: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 
 .square {
   color: $white;
   float: left;
   font-size: 600%;
+  padding-top: 2%;
+
 }
 
 .center {
@@ -48,5 +66,5 @@ div {
 }
 
 .blue {
-  background-color: $blue;
+  color: $blue;
 }
