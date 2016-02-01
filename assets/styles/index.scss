@@ -12,20 +12,64 @@ body {
   text-align: center;
 }
 
-div {
-  color: $white;
-  height: 30%;
-  width: 30%;
-}
-
 table {
   color: $white;
+  font-size: 200%;
   margin: 0 auto;
+  width: 33%;
+}
+
+.message,
+.password {
+  background-color: $blue;
+  height: 10%;
+  margin: 0 auto;
+  margin-top: 15%;
+  opacity: 10%;
+  padding-top: 2%;
+  position: fixed;
+  text-align: center;
+  width: 450px;
+}
+
+#sign-up {
+  border: 1px solid $white;
+  padding: 20px;
+}
+
+#sign-in {
+  border: 1px solid $white;
+  padding: 20px;
+}
+
+// this will be applied for browsers up to 300px wide
+// @media (max-width: 900px) {
+//   div {
+//     color: $white;
+//     height: 100px;
+//     width: 100px;
+//   }
+// }
+
+// this will be applied for browsers up to 1400px wide
+@media (max-width: 1440px) {
+  div {
+    color: $white;
+    height: 30%;
+    width: 33%;
+  }
 }
 
 .game {
   height: 450px;
   margin: 0 auto;
+  width: 450px;
+}
+
+.login {
+  height: 450px;
+  margin: 0 auto;
+  text-align: left;
   width: 450px;
 }
 
@@ -50,7 +94,11 @@ table {
   float: left;
   font-size: 600%;
   padding-top: 2%;
+}
 
+.square:hover {
+  background-color: $blue;
+  opacity: .4;
 }
 
 .center {
